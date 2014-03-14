@@ -1,0 +1,59 @@
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+# set colors
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Show me the branch, revision number and purity of the repo I'm working 
+# on. With pretty colors.
+DEFAULT="[0;37m"
+PINK="[0;35m"
+GREEN="[0;32m"
+ORANGE="[0;33m"
+
+# Check what kind of repo exists in this folder (hg or git)
+function prompt_char {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    hg root >/dev/null 2>/dev/null && echo '☿' && return
+    echo '·'
+}
+
+# Check the current git branch
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
+# Check what git revision we're on. 
+function current_rev() {
+  br=$(git log --pretty=format:'' | wc -l 2>/dev/null) || return
+  echo ${br#brs/heads/}
+}
+
+# Reads the hg summary line by line, outputs the working branch
+# revision number and notifies if there's untracked files or changes
+# Inspired by Steve Losh's implementation: 
+# http://stevelosh.com/blog/2009/03/mercurial-bash-prompts/
+summary() {
+  git branch >/dev/null 2>/dev/null && echo -e '\033[37;0m on \033[35;40m'$(current_branch)'\033[37;0m·r'$(current_rev)'' && return
+  hg summary 2> /dev/null | \
+    awk 'BEGIN {RS=""; FS="\n"} {
+      printf ("\033[37;0m on \033[35;40m"pieces[split($3,pieces,":")],$0); 
+      printf ("\033[37;0m·r" substr(pieces[split($1,pieces,":")-1],2),$0);
+      if(match($4, "modified"))
+        printf ("\033[0;32m!",$0);
+      else if (match($4, "unknown") && !match($4, "modified"))
+        printf ("\033[0;32m?",$0);
+    }'
+}
+
+export PS1='\n\e${GREEN}\u\
+\e${DEFAULT} at \e${ORANGE}\h \
+\e${DEFAULT}in \e${GREEN}\w$(summary)
+\e${DEFAULT}\n$(prompt_char) '
+
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+eval "$(/Users/spyroslivathinos/Code/zendesk/help_center/.hc/bin/hc init -)"
