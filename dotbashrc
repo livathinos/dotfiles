@@ -1,0 +1,5 @@
+source ~/dotfiles/bash/secret.sh
+source ~/dotfiles/bash/helpers.sh
+source ~/dotfiles/bash/alias.sh
+source ~/dotfiles/bash/git_prompt.sh
+source ~/dotfiles/bash/env.sh

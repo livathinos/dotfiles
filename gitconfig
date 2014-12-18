@@ -1,0 +1,70 @@
+[hub]
+  protocol = https
+
+[credential]
+
+[branch]
+  autosetuprebase = always
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = /usr/bin/vim
+
+[user]
+  name =
+  email =
+
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+
+[mergetool "sourcetree"]
+  cmd =/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh\"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+
+[push]
+  default = upstream
+
+[alias]
+  ci = commit
+  cim = commit -m
+  ciam = commit -am
+  ciaam = "!git add -A && git ciam"
+  co = checkout
+  cod = checkout -
+  st = status -sb
+  br = branch
+  diffc = diff --cached
+  pl = pull
+  ps = push
+  pls = "!git pull && git push"
+  pick = cherry-pick
+  pick-all = !sh -c '(git show $1 2>&1 > /dev/null || (git fetch origin && git show $1 2>&1 > /dev/null)) && git co staging && git pull && git pick $1 $2 && git pls && git co production && git pull && git pick $1 $2 && git pls && git co master && git pull' -
+  uncommit = reset --soft HEAD^
+  amend = commit -a --amend -C HEAD
+  amendm = commit -a --amend # amend with message
+  rmuntracked = clean -df
+  rmb = !sh -c '(git branch -D $1 >/dev/null 2>&1 || true) && (git push origin :$1 >/dev/null 2>&1 || true) && rm .git/refs/remotes/origin/$1 >/dev/null 2>&1' - # using semiconol -> syntax error :/
+  adrc = "!git add . && git rebase --continue"
+  adpc = "!git add . && git pick --continue"
+  rbm = "!git checkout master && git pull && git co - && git rebase master"
+  unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
+  unpulled = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git fetch && git log HEAD..origin/$PROJ_BRANCH"
+  clear = "!git reset .; git co .; git clean -df"
+  parent-update = "!git fetch parent && git rebase parent/master"
+  consume = !sh -c 'git cherry-pick $1 && git rmb $1' -
+  count = shortlog -sn
+  amend-to = !sh -c 'git stash && git edit $1 && git stash pop && git edit --amend' -
+  rprune = !git remote prune origin > /dev/null
+  request = "!~/dotfiles/bin/git-pull-request"
+  whence = "!git-whence"
+  branch-name = !"git for-each-ref --format=\"%(refname:short)\" $(git symbolic-ref HEAD)"
+  zpush = !"git push -u origin `git branch-name`:slivathinos/`git branch-name`"
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %%an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg = !"git lg1"
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
