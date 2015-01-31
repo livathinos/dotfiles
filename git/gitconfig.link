@@ -39,7 +39,6 @@
   ps = push
   pls = "!git pull && git push"
   pick = cherry-pick
-  pick-all = !sh -c '(git show $1 2>&1 > /dev/null || (git fetch origin && git show $1 2>&1 > /dev/null)) && git co staging && git pull && git pick $1 $2 && git pls && git co production && git pull && git pick $1 $2 && git pls && git co master && git pull' -
   uncommit = reset --soft HEAD^
   amend = commit -a --amend -C HEAD
   amendm = commit -a --amend # amend with message
@@ -59,7 +58,6 @@
   request = "!~/dotfiles/bin/git-pull-request"
   whence = "!git-whence"
   branch-name = !"git for-each-ref --format=\"%(refname:short)\" $(git symbolic-ref HEAD)"
-  zpush = !"git push -u origin `git branch-name`:slivathinos/`git branch-name`"
   lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %%an%C(reset)%C(bold yellow)%d%C(reset)' --all
   lg = !"git lg1"
 

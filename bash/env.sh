@@ -17,6 +17,3 @@ fi
 export ACKRC=".ackrc"
 export BUNDLER_EDITOR=vim
 export DOCKER_HOST=tcp://192.168.42.45:2375
-export RBENV_ROOT=/Users/spyroslivathinos/.rbenv
-
-rbenv shell 2.1.5
