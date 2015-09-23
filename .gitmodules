@@ -1,0 +1,39 @@
+[submodule "vim/setup/bundle/nerdtree"]
+	path = vim/setup/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/setup/bundle/ack.vim"]
+	path = vim/setup/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "vim/setup/bundle/blockle.vim"]
+	path = vim/setup/bundle/blockle.vim
+	url = https://github.com/vim-scripts/blockle.vim
+[submodule "vim/setup/bundle/csapprox"]
+	path = vim/setup/bundle/csapprox
+	url = https://github.com/godlygeek/csapprox
+[submodule "vim/setup/bundle/ctrlp-funky"]
+	path = vim/setup/bundle/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky
+[submodule "vim/setup/bundle/ctrlp.vim"]
+	path = vim/setup/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/setup/bundle/editorconfig-vim"]
+	path = vim/setup/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/setup/bundle/snipmate.vim"]
+	path = vim/setup/bundle/snipmate.vim
+	url = https://github.com/msanders/snipmate.vim
+[submodule "vim/setup/bundle/vim-airline"]
+	path = vim/setup/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vim/setup/bundle/vim-blockle"]
+	path = vim/setup/bundle/vim-blockle
+	url = https://github.com/jgdavey/vim-blockle
+[submodule "vim/setup/bundle/vim-fugitive"]
+	path = vim/setup/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/setup/bundle/vim-gitgutter"]
+	path = vim/setup/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/setup/bundle/vim-multiple-cursors"]
+	path = vim/setup/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
