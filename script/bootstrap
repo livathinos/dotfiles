@@ -24,7 +24,7 @@ fail () {
 }
 
 setup_gitconfig () {
-  if ! [ -f git/gitconfig.link]
+  if [ ! -f git/gitconfig.link]
   then
     info 'setup gitconfig'
 
@@ -132,8 +132,17 @@ install_dotfiles () {
   done
 }
 
+install_vim () {
+  info 'installing vim'
+
+  mkdir "$HOME/.vim"
+
+  cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
+}
+
 setup_gitconfig
 install_dotfiles
+install_vim
 
 echo ''
 echo '  All installed!'
