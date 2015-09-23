@@ -24,7 +24,7 @@ fail () {
 }
 
 setup_gitconfig () {
-  if [ ! -f git/gitconfig.link]
+  if [ ! -f git/gitconfig.link ]
   then
     info 'setup gitconfig'
 
