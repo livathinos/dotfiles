@@ -1,7 +1,32 @@
-execute pathogen#infect()
+" plugins {{{1
 
-syntax on
+set nocompatible
+
+" vundle needs filtype plugins off
+" i turn it on later
+filetype plugin indent off
+syntax off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" start vundle environment
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-multiple-cursors'
+
+" add plugins before this
+call vundle#end()
+
 filetype plugin indent on
+syntax on
 
 " Search with the silver searcher
 map ,a :Ag<SPACE>
