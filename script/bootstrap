@@ -135,14 +135,27 @@ install_dotfiles () {
 install_vim () {
   info 'installing vim'
 
-  mkdir "$HOME/.vim"
+  if [ ! "$HOME/.vim/" ]
+  then
+    mkdir "$HOME/.vim"
+    cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
+  fi
 
-  cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
+  success "done installing vim"
+}
+
+install_fonts () {
+  info 'installing fonts'
+
+  cp -R $DOTFILES_ROOT/fonts/* $HOME/Library/Fonts/
+
+  success "done installing fonts"
 }
 
 setup_gitconfig
 install_dotfiles
 install_vim
+install_fonts
 
 echo ''
 echo '  All installed!'
