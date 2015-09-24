@@ -1,9 +1,9 @@
-GIT_BRANCH_SYMBOL='⭠ '
+GIT_BRANCH_SYMBOL=' '
 GIT_BRANCH_CHANGED_SYMBOL='+'
 GIT_NEED_PUSH_SYMBOL='⇡'
 GIT_NEED_PULL_SYMBOL='⇣'
 
-_SEG_SEP='⮀'
+_SEG_SEP=''
 
 # Solarized colorscheme
 FG_BASE03="\[$(tput setaf 8)\]" # Background color

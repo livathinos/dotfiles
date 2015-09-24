@@ -152,9 +152,18 @@ install_fonts () {
   success "done installing fonts"
 }
 
+setup_iterm () {
+  info 'setup iterm'
+
+  cp -R $DOTFILES_ROOT/iterm/com.googlecode.iterm2.plist ~/Documents/
+
+  success "done setting up iterm"
+}
+
 setup_gitconfig
 install_dotfiles
 install_vim
+setup_iterm
 install_fonts
 
 echo ''
