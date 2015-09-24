@@ -82,12 +82,10 @@ promptStatus() {
 
 makePrompt() {
   RETVAL=$?
-  local statusEnd="$BG_BASE0$FG_BASE03$_SEG_SEP$RESET"
-  local timeSeg="$BG_BASE0$FG_BASE2"
-  local timeSegEnd="$FG_BASE0$BG_BLUE${_SEG_SEP}$RESET"
+  local statusEnd="$BG_BLUE$FG_BASE03$_SEG_SEP"
   local dirSeg="$BG_BLUE$FG_BASE03"
 
-  PS1="\n $(promptStatus "$statusEnd" "$RETVAL")$timeSeg \t $timeSegEnd$dirSeg \w $(gitStatus) $RESET"
+  PS1="\n $(promptStatus "$statusEnd")$dirSeg \w $(gitStatus) $RESET"
 }
 
 PROMPT_COMMAND=makePrompt
