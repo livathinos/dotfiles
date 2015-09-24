@@ -14,8 +14,5 @@ symlinked to a dotfile in your home directory with same name.
   where `bash_installation_path` is something like
   `/usr/local/Cellar/bash/4.x.x/bin/bash`.
 
-2. Open up iTerm -> Preferences -> Text and change both Regular and Non-ASCII
-   fonts to a powerline font.
-
-3. iTerm -> Preferences -> Colors -> Load Presets -> Import and import the
+2. iTerm -> Preferences -> Colors -> Load Presets -> Import and import the
    DarkTheme.iterm file from `dotfiles/iterm/`
