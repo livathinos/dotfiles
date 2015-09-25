@@ -7,7 +7,7 @@
   autosetuprebase = always
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/spyros/.gitignore_global
   editor = /usr/bin/vim
 
 [user]
