@@ -134,15 +134,11 @@ install_dotfiles () {
 install_vim () {
   info 'installing vim'
 
-  if [ ! "$HOME/.vim/" ]
+  if [ ! -d "$HOME/.vim/" ]
   then
     mkdir "$HOME/.vim"
-    cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
-  fi
-
-  if [ ! "$HOME/.vim/tmp" ]
-  then
     mkdir "$HOME/.vim/tmp"
+    cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
   fi
 
   success "done installing vim"
