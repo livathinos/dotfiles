@@ -141,6 +141,11 @@ install_vim () {
     cp -R $DOTFILES_ROOT/vim/setup/* $HOME/.vim/
   fi
 
+  if [ ! "$HOME/.vim/tmp" ]
+  then
+    mkdir "$HOME/.vim/tmp"
+  fi
+
   success "done installing vim"
 }
 
