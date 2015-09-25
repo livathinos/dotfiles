@@ -152,6 +152,15 @@ install_fonts () {
   success "done installing fonts"
 }
 
+install_bin_scripts () {
+  info 'installing bin scripts'
+
+  chmod a+x $DOTFILES_ROOT/bin/*
+  sudo cp -R $DOTFILES_ROOT/bin/* /usr/bin/
+
+  success "done installing bin scripts"
+}
+
 setup_iterm () {
   info 'setup iterm'
 
@@ -165,6 +174,7 @@ install_dotfiles
 install_vim
 setup_iterm
 install_fonts
+install_bin_scripts
 
 echo ''
 echo '  All installed!'
