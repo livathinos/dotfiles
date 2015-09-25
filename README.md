@@ -1,7 +1,20 @@
 ## Installation
 
+Start by cloning the repo:
+
+```
+git clone https://github.com/livathinos/dotfiles
+```
+
+Assumes that this is cloned to `~dotfiles`.
+
 Run `script/boostrap` to get going. Any file with a `.link` extension will get
 symlinked to a dotfile in your home directory with same name.
+
+## Setting up vim
+
+In order to install all plugins, you will need to run `:PluginInstall` the first
+time you open up vim.
 
 ## Setting up bash powerline
 
