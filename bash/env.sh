@@ -6,6 +6,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 MYSQL=/usr/local/mysql/bin
 GBRT=~/bin
 
+# Setup rbenv shims
+export PATH=~/.rbenv/shims:$PATH
+
 export PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export PATH=$PATH:$GBRT
