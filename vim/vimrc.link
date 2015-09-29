@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-endwise'
 
 " add plugins before this
 call vundle#end()
