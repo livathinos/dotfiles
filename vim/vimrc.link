@@ -145,3 +145,15 @@ map <C-C> :w !pbcopy<CR><CR>
 set cursorline
 hi CursorLine guibg=Grey40
 hi Search cterm=NONE ctermfg=white ctermbg=blue
+
+" Don't use tabs for auto completion at the beginning of lines
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
