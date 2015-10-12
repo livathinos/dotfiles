@@ -20,3 +20,5 @@ fi
 export ACKRC=".ackrc"
 export BUNDLER_EDITOR=vim
 export DOCKER_HOST=tcp://192.168.42.45:2375
+
+eval "$(fasd --init auto)"
