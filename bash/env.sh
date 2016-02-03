@@ -9,6 +9,8 @@ GBRT=~/bin
 # Setup rbenv shims
 export PATH=~/.rbenv/shims:$PATH
 
+export PATH=/usr/local/share/npm/bin/:$PATH
+
 export PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export PATH=$PATH:$GBRT
