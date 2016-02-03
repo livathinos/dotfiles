@@ -23,6 +23,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+Plugin 'elixir-lang/vim-elixir'
 
 " add plugins before this
 call vundle#end()
