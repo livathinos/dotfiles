@@ -38,6 +38,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" bind K to project wide search for word under cursor
+nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " NERDTree toggle
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
