@@ -47,6 +47,7 @@
   adrc = "!git add . && git rebase --continue"
   adpc = "!git add . && git pick --continue"
   rbm = "!git checkout master && git pull && git co - && git rebase master"
+  rim = "!git rebase -i master"
   unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
   unpulled = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git fetch && git log HEAD..origin/$PROJ_BRANCH"
   clear = "!git reset .; git co .; git clean -df"
