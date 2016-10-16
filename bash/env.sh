@@ -25,3 +25,6 @@ export DOCKER_HOST=tcp://192.168.42.45:2375
 export AIRFLOW_HOME="~/airflow"
 
 eval "$(fasd --init auto)"
+
+# Set vim as the edit-and-execute-command editor
+set -o vi
