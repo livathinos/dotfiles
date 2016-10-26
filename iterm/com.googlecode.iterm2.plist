@@ -11451,11 +11451,21 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1088 987 384 129 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 377 620 392 0 0 1440 877 </string>
+	<string>970 799 620 392 0 0 2560 1440 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>269 215 918 381 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 68 1386 809 0 0 1440 877 </string>
+	<string>425 404 650 473 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>70 893 650 473 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>197 200 1034 677 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>352 695 1001 609 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>0 604 1459 813 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -11735,13 +11745,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.62007033824920654</real>
+				<real>0.83044558763504028</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.60816127061843872</real>
+				<real>0.81097090244293213</real>
 				<key>Red Component</key>
-				<real>0.52756917476654053</real>
+				<real>0.68019402027130127</real>
 			</dict>
 			<key>Guid</key>
 			<string>FB211477-BD53-4EAC-A82C-CF0432DDBBD6</string>
@@ -12394,7 +12404,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-22T10:43:55Z</date>
+	<date>2016-10-18T19:37:59Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -12448,7 +12458,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.2</string>
+	<string>3.0.10</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
